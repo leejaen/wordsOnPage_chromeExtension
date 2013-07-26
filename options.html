@@ -1,0 +1,155 @@
+﻿<!doctype html>
+<html>
+<head>
+    <title>settings</title>
+    <script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="list.js"></script>
+    <script type="text/javascript" src="options.js"></script>
+    <link rel="stylesheet" type="text/css" href="test.css" />
+    <style>
+        body { background-color: #F2F2F2; color: black; }
+        .option { border: 2px solid #777777; cursor: pointer; }
+        .tile { text-align: center; font-size: 18px; min-width: 40px; line-height: 40px; height: 40px; float: left; text-align: left; margin: 10px; border-radius: 6px; box-shadow: 0px 0px 10px #777777 inset; }
+        .select { border: 2px solid blue; box-shadow: 0px 0px 20px blue; }
+        #ieltsListeningViewsTitle { cursor: pointer; }
+        .animate { -webkit-animation-duration: 0.3s; -webkit-animation-delay: .2s; -webkit-animation-timing-function: ease; -webkit-animation-fill-mode: both; }
+
+        @-webkit-keyframes minHeight {
+            0% { height: 100px; }
+            90% { height: 0px; }
+            100% { height: 10px; }
+        }
+
+        .minHeight { overflow: hidden; /*width: 98%;*/ border-radius: 6px; -webkit-animation-name: minHeight; animation-name: minHeight; }
+
+        @-webkit-keyframes maxHeight {
+            0% { height: 10px; }
+            90% { height: 110px; }
+            100% { height: 100px; }
+        }
+
+        .maxHeight { overflow: hidden; /*width: 98%;*/ border-radius: 6px; -webkit-animation-name: maxHeight; animation-name: maxHeight; }
+    </style>
+</head>
+<body>
+    <form>
+    <table style="width: 100%">
+        <tr>
+            <td style="text-align: right; float: right;">
+                <input id="Button1" type="button" value="重置" />
+                反馈：
+                <a target="_blank" href="http://weibo.com/leejaen" style="text-decoration: none; position: relative; top: 2px;">
+                    <img src="sinaweibo.png" alt="直接发送邮件" /></a>
+                <a target="_blank" href="http://mail.163.com/share/mail2me.htm#email=108101101106097101110064049054051046099111109" style="text-decoration: none; position: relative; top: 2px;">
+                    <img src="http://mimg.127.net/xm/all/share/120111/img/mailme_4.png" alt="直接发送邮件" /></a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <hr />
+                样式设置<br />
+                <div text="color" class="tile option" value="" style="border: 0px">
+                    <div class="" id="Div9" style="height: 35px;">
+                        <div id="Div10" class="monsterCage" style="height: 39px; padding: 0px !important;">沉稳青</div>
+                    </div>
+                </div>
+                <div text="color" class="tile option" value="red" style="border: 0px">
+                    <div class="" id="Div7" style="height: 35px;">
+                        <div id="Div8" class="monsterCagered" style="height: 39px; padding: 0px !important;">喜庆红</div>
+                    </div>
+                </div>
+                <div text="color" class="tile option" value="blue" style="border: 0px">
+                    <div class="" id="Div5" style="height: 35px;">
+                        <div id="Div6" class="monsterCageblue" style="height: 39px; padding: 0px !important;">安静蓝</div>
+                    </div>
+                </div>
+                <div text="color" class="tile option" value="green" style="border: 0px">
+                    <div class="" id="Div3" style="height: 35px;">
+                        <div id="Div4" class="monsterCagegreen" style="height: 39px; padding: 0px !important;">激情绿</div>
+                    </div>
+                </div>
+                <div text="color" class="tile option" value="white" style="border: 0px">
+                    <div class="" id="Div1" style="height: 35px;">
+                        <div id="Div2" class="monsterCagewhite" style="height: 39px; padding: 0px !important;">素色白</div>
+                    </div>
+                </div>
+                <!--
+                <div text="color" class="tile option" value="greenrain">
+                    <div class="" id="Div11" style="height: 35px;">
+                        <div id="Div12" class="monsterCagegreenrain" style="height: 39px; padding: 0px;">雨后清新</div>
+                    </div>
+                </div>-->
+                <div class="seperator"></div>
+                <div text="isFixed" class="tile option" value="follow">
+                    跟随鼠标
+                </div>
+                <div text="isFixed" class="tile option" value="fixed">
+                    重设到系统默认固定位置显示
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <hr />
+                动画设置<br />
+                <div text="animation" class="tile option" value="bounceInRight,bounceOutLeft">右侧飞入</div>
+                <div text="animation" class="tile option" value="bounceInLeft,bounceOutRight">左侧飞入</div>
+                <div text="animation" class="tile option" value="fadeInRight,fadeOutLeft">右侧渐入</div>
+                <div text="animation" class="tile option" value="fadeInLeft,fadeOutRight">左侧渐入</div>
+                <div text="animation" class="tile option" value="bounceInDown,bounceOutDown">上部飞入</div>
+                <div text="animation" class="tile option" value="bounceInUp,bounceOutUp">下部飞入</div>
+                <div text="animation" class="tile option" value="fadeInDown,fadeOutDown">上部渐入</div>
+                <div text="animation" class="tile option" value="fadeInUp,fadeOutUp">下部渐入</div>
+                <div text="animation" class="tile option" value="rotateInDownRight,rotateOutUpLeft">右侧旋转进入</div>
+                <div text="animation" class="tile option" value="rotateInDownLeft,rotateOutUpRight">左侧旋转进入</div>
+                <div text="animation" class="tile option" value="fadeIn,fadeOut">渐入渐出</div>
+                <div text="animation" class="tile option" value="bounceIn,bounceOut">飞入飞出</div>
+                <div text="animation" class="tile option" value="rotateIn,rotateOut">旋转</div>
+                <div text="animation" class="tile option" value="tada,fadeOut">tada</div>
+                <div text="animation" class="tile option" value="shake">摇晃</div>
+                <div text="animation" class="tile option" value="swing">摆动</div>
+                <div text="animation" class="tile option" value="wobble">摇摆</div>
+                <div text="animation" class="tile option" value="flash">闪动</div>
+                <div text="animation" class="tile option" value="flip" title="本动画效果较占用显卡资源">翻转</div>
+                <div text="animation" class="tile option" value="flipInY,flipOutY" title="本动画效果较占用显卡资源">纵向翻转</div>
+                <div text="animation" class="tile option" value="flipInX,flipOutX" title="本动画效果较占用显卡资源">横向翻转</div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <hr />
+                时间设置<br />
+                <div text="duration" class="tile option" value="7,2">持续5秒，间隔2秒           </div>
+                <div text="duration" class="tile option" value="13,3">持续10秒，间隔3秒</div>
+                <div text="duration" class="tile option" value="20,5">持续15秒，间隔5秒</div>
+                <div text="duration" class="tile option" value="40,5">持续30秒，间隔5秒</div>
+                <div text="duration" class="tile option" value="70,10">持续60秒，间隔10秒</div>
+                <div text="duration" class="tile option" value="130,10">持续120秒，间隔10秒</div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <hr />
+                字典设置<br />
+                <div text="dictionary" class="tile option" value="postgraduate">新东方考研词汇</div>
+                <div text="dictionary" class="tile option" value="ielts">雅思</div>
+                <div text="dictionary" class="tile option" value="ielts1228">雅思词汇最核心1228词</div>
+                <div text="dictionary" class="tile option" value="idiom">口语习语</div>
+                <div text="dictionary" class="tile option" value="idiom1000">口语习语1000句</div>
+                <div text="dictionary" class="tile option" value="OMGmeiyu">OMG美语1~109</div>
+                <div text="dictionary" class="tile option" id="customer" value="customizeDictionary">自定义字典（每行一条）</div>
+				<br /><textarea id="customizeDictionary" type="text" style="width:100%;height:500px;display:none" ></textarea>
+                <br /><fieldset id="ieltsListeningViews" class="animate minHeight"style="width:100%;" >
+                    <legend id="ieltsListeningViewsTitle">红宝，巴郎，托福，雅思，考研</legend>
+                    <div text="dictionary" class="tile option" value="BALangIn13505">巴郎(675词)</div>
+                    <div text="dictionary" class="tile option" value="ieltsIn13505">雅思(828词)</div>
+                    <div text="dictionary" class="tile option" value="toeflIn13505">托福(2397词)</div>
+                    <div text="dictionary" class="tile option" value="postgraduateIn13505">考研(827词)</div>
+                    <div text="dictionary" class="tile option" value="treasureIn13505">红宝(7419词)</div>
+                </fieldset>
+            </td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>
